@@ -1,0 +1,212 @@
+@import "../styles/variables.scss";
+
+
+// search
+.search {
+    width: 400px;
+    height: 70px;
+    position: relative;
+    background-color: $neutral-100;
+    border: .5px solid $neutral-700;
+    border-radius: 5px;
+    cursor: pointer;
+    @include rowflexx(center);
+
+    @include breakpoint(desktop){
+        width: 70vw;
+    }
+    @include breakpoint(desktop){
+        width: 550px;
+    }
+    &__box {
+        height: 100%;
+        @include rowflexx(center);
+        // gap: 20px;
+    }
+    &__inputs {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background-color: red;
+        img{
+            position: absolute;
+            top: 20px;
+            bottom: 0px;
+            left: 20px;
+            opacity: .5;
+            transition: all .5s ease;
+        }
+        input:focus ~ img,
+        input:not(:placeholder-shown) ~ img{
+            opacity: 1;
+        }
+        input {
+            padding-left: 60px;
+            width: 100%;
+            height: 100%;
+            background-color: transparent;
+            border: none;
+            margin: none;
+            outline: none;
+            cursor: pointer;
+            @include fontNormal(1em,1em, $neutral-500);
+            transition: all .5s ease;
+
+
+            &:focus {
+                @include fontNormal(1em,1em, $main-900);
+            }
+        }
+        input[name="eventname"]{
+            border-right: 1px solid $neutral-500;
+        }
+    }
+    select {
+        position: absolute;
+        // top: 6.5px;
+        // bottom: 0px;
+        // left: 0px;
+        background-color: $grey-901;
+        height: 100%;
+        width: 100px;
+        color: #fff;
+        padding: 10px;
+        &:focus {
+            outline: none !important;
+        }
+    }
+    input.search__input {
+        padding-left: 20px;
+        width: 100px;
+        height: 98%;
+        background-color: transparent;
+        border: none;
+        margin: none;
+        outline: none;
+        cursor: pointer;
+        background-color: $grey-100;
+        position: absolute;
+        left: 100px;
+        @include fontNormal(1em,1em, $neutral-500);
+        transition: all .5s ease;
+
+
+        &:focus {
+            @include fontNormal(1em,1em, $main-900);
+        }
+    }
+    &__btn{
+        width: 150px;
+        position: absolute;
+        top: 6.5px;
+        bottom: 0px;
+        right: 10px;
+
+        button{
+            height: 56px;
+        }
+    }
+}
+
+// button
+.platform {
+    width: 100%;
+    cursor: pointer;
+    @include colflexx(flex-start);
+    min-width: 20px;
+    width: fit-content;
+    padding: 0px 30px 0px 30px;
+    outline: none; 
+    border: none;
+    height: 50px;
+    border-radius: 5px !important;
+
+    &.platform_mainbtn {
+        width: 100%;
+        background-color:  $orange-500;
+        transition: all .5s ease;
+        font-size: 1.2em;
+        white-space: nowrap;
+        @include rowflex(center,center);
+        @include fontSemiBold(1.1em, 1em, #fff);
+        i {
+            margin-right: 10px;
+        }
+        &.platform_mainbtn__size-small{
+            height: 40px;
+        }
+        &.platform_mainbtn__bkg-dark{
+            background-color: $grey-902;
+        }
+        &.platform_mainbtn__bkg-white{
+            background-color: #fff;
+            color: $main-900;
+            box-shadow: 0px 4px 20px rgba(224, 224, 224, 0.2);
+        }
+        &:hover {
+            color: #fff;
+            background-color: $main-902;
+        }
+    
+        &:disabled{
+            background-color: $grey-500;
+            color: #fff;
+            cursor: not-allowed;
+        }
+        
+        @include breakpoint(mobileonly){
+            width: 100%;
+            margin-top: 20px;
+        }
+    }
+
+    &.platform_mainbtnicon {
+        width: 100%;
+        background-color:  $orange-500;
+        transition: all .5s ease;
+        font-size: 1.2em;
+        white-space: nowrap;
+        @include rowflex(center,center);
+        @include fontSemiBold(1.1em, 1em, #fff);
+        i {
+            margin-right: 10px;
+        }
+        &.platform_mainbtnicon__size-small{
+            height: 40px;
+        }
+        &.platform_mainbtnicon__bkg-dark{
+            background-color: $main-900;
+        }
+        &.platform_mainbtnicon__bkg-white{
+            background-color: #fff;
+            color: $main-900;
+            box-shadow: 0px 4px 20px rgba(224, 224, 224, 0.2);
+        }
+        &:hover {
+            color: #fff;
+            background-color: $main-902;
+        }
+    
+        &:disabled{
+            background-color: $grey-500;
+            color: #fff;
+            cursor: not-allowed;
+        }
+        
+        @include breakpoint(mobileonly){
+            width: 100%;
+            margin-top: 20px;
+        }
+    }
+
+    &.--child{
+        width: 100%;
+        margin: 0;
+        margin-top: 20px;
+        @include fontNormal(.9em, 1.2em, $text-main);
+    }
+
+    strong {
+        color: $orange-500;
+    }
+}

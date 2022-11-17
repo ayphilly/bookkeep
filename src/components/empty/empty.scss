@@ -1,0 +1,41 @@
+@import "../../styles/variables.scss";
+
+.empty-container{
+    width: 21em;
+    height: fit-content;
+    @include rowflex(center,center);
+    text-align: center;
+
+    .empty-inner {
+        @include colflexx(center);
+
+        img {
+            width: auto;
+
+            @include breakpoint(mobileonly){
+                width: 200px;
+            }
+
+        }
+        p:nth-child(2){
+            margin: 0;
+            margin-top: 30px;
+            @include fontBold(1.5em, 1em, #fff);
+
+            @include breakpoint(mobileonly){
+                @include fontBold(1.2em, 1em, #fff);
+            }
+
+        }
+        p:nth-child(3){
+
+            width: 90%;
+            margin-top: 10px;
+            
+            @include fontNormal(1.1em, 1.7em, #fff);
+            @include breakpoint(mobileonly){
+                @include fontNormal(1.1em, 1.7em, #fff);
+            }
+        }
+    }
+}

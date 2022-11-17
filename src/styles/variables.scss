@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+
+// Colors
+
+$text-main : #8985A0;
+$main-text:#ABA5BB;
+$main-fade:#D6D0E7;
+
+$orange-100:#FFF5E8;
+$orange-200:#FFDEB6;
+$orange-300:#FFC884;
+$orange-400:#FFB151;
+$orange-500:#F9971E;
+$orange-600:#D77D0D;
+
+$main-100: #F5F5FF;
+$main-200: #D8D7FF;
+$main-300: #BAB9FF;
+$main-400: #9A98FA;
+$main-500: #817FDD;
+$main-600: #6A67C0;
+$main-700: #5452A3;
+$main-800: #403F86;
+$main-900: #2F2D69;
+$main-901: #1F1E4C;
+$main-902: #100F3D;
+
+$secondary-100: #FFF9E9;
+$secondary-200: #FFECB8;
+$secondary-300: #FFDF88;
+$secondary-400: #FFD257;
+$secondary-500: #FEC526;
+$secondary-600: #DCA714;
+$secondary-700: #BA8B07;
+$secondary-800: #987000;
+$secondary-900: #765700;
+$secondary-901: #543E00;
+
+
+$neutral-100: #F7F8FA;
+$neutral-200: #EAEBF1;
+$neutral-300: #DDE1E9;
+$neutral-400: #D1D5E0;
+$neutral-500: #B6BBC9;
+$neutral-600: #858CA0;
+$neutral-700: #676D7E;
+$neutral-800: #4C5366;
+$neutral-900: #2A3147;
+$neutral-901: #1B2032;
+$neutral-902: #15171B;
+
+$grey-100 : #F7F8F9;
+$grey-200 : #E2E7F5;
+$grey-300 : #C9CFDF;
+$grey-400 : #B1B7C8;
+$grey-500 : #9AA0B1;
+$grey-600 : #83899B;
+$grey-700 : #6E7484;
+$grey-800 : #595E6D;
+$grey-900 : #454A57;
+$grey-901 : #323640;
+$grey-902 : #21242B;
+
+$green-100 : #F0FFF6;
+$green-200 : #CEFFE3;
+$green-300 : #ADFFD0;
+$green-400 : #8CFFBD;
+$green-500 : #69FCA8;
+$green-600 : #4DDA89;
+$green-700 : #35B86D;
+$green-800 : #219653;
+$green-900 : #12743C;
+$green-901 : #075227;
+
+$yellow-100 : #FFF9E9;
+$yellow-200 : #FFECBA;
+$yellow-300 : #FFDF8A;
+$yellow-400 : #FFD25A;
+$yellow-500 : #FFC52A;
+$yellow-600 : #DDA718;
+$yellow-700 : #BB8B0A;
+$yellow-800 : #996F00;
+$yellow-900 : #775700;
+$yellow-901 : #553E00;
+
+
+//flex
+
+@mixin rowflex ($align, $just){
+  display: flex;
+  flex-direction: row;
+  align-items: $align;
+  justify-content: $just;
+}
+
+@mixin rowRevflex ($align, $just){
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: $align;
+  justify-content: $just;
+}
+
+@mixin colflex ($align, $just){
+  display: flex;
+  flex-direction: column;
+  align-items: $align;
+  justify-content: $just;
+}
+
+@mixin rowflexx ($align){
+  display: flex;
+  flex-direction: row;
+  align-items: $align;
+  
+}
+@mixin rowflexxx ($align){
+  display: flex;
+  flex-direction: row;
+  align-items: $align;
+  justify-content: space-between;
+  
+}
+
+@mixin colflexx ($align){
+  display: flex;
+  flex-direction: column;
+  align-items: $align;
+  
+}
+@mixin colflexxx ($align){
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: $align;
+  
+}
+
+
+
+
+
+// font styles
+
+@mixin font($fs, $lh, $color) {
+  font-size: $fs;
+  line-height: $lh;
+  color: $color;
+  font-style: normal;
+  font-family: 'Inter', sans-serif;
+    
+}
+
+@mixin fontMain($fs, $lh, $color) {
+  font-size: $fs;
+  line-height: $lh;
+  color: $color;
+  font-style: normal;
+  font-family: 'Khand', sans-serif;
+  
+}
+@mixin fontLight($fs, $lh, $color) {
+  @include font($fs, $lh, $color);
+  font-weight: 300;
+}
+
+@mixin fontNormal($fs, $lh, $color) {
+  @include font($fs, $lh, $color);
+  font-weight: 400;
+}
+
+@mixin fontMedium($fs, $lh, $color) {
+  @include font($fs, $lh, $color);
+  font-weight: 500;
+}
+
+@mixin fontSemiBold($fs, $lh, $color) {
+  @include font($fs, $lh, $color);
+  font-weight: 600;
+}
+
+
+@mixin fontBold($fs, $lh, $color) {
+  @include font($fs, $lh, $color);
+  font-weight: 700;
+}
+
+@mixin fontBlack($fs, $lh, $color) {
+  @include font($fs, $lh, $color);
+  font-weight: 900;
+}
+
+
+
+
+
+// keyframes
+
+@mixin keyframes($animationName) {
+    @-webkit-keyframes #{$animationName} {
+      @content;
+    }
+    @-moz-keyframes #{$animationName} {
+      @content;
+    }
+    @-o-keyframes #{$animationName} {
+      @content;
+    }
+    @keyframes #{$animationName} {
+      @content;
+    }
+}
+
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};      
+}
+
+@include keyframes(slide-in) {
+  0% { 
+    opacity: 0;
+    padding-top: 20px;
+    @include animation('fade 0.7s 1'); 
+  }
+
+  90% { 
+    padding-top: 0px; 
+    @include animation('fade 0.7s 1'); 
+  }
+}
+
+@include keyframes(fade) {
+  0% { 
+    opacity: 0; 
+  }
+
+  90% { 
+    padding-top: 1; 
+  }
+}
+
+
+@mixin animate($name, $duration, $iteration, $direction) {
+  -webkit-animation-duration: $duration;
+  -moz-animation-duration: $duration;
+  -o-animation-duration: $duration;
+  animation-duration: $duration;
+  -webkit-animation-iteration-count: $iteration;
+  -moz-animation-iteration-count: $iteration;
+  -o-animation-iteration-count: $iteration;
+  animation-iteration-count: $iteration;
+  -webkit-animation-name: $name;
+  -moz-animation-name: $name;
+  -o-animation-name: $name;
+  animation-name: $name;
+  -webkit-animation-direction: $direction;
+  -moz-animation-direction: $direction;
+  -o-animation-direction: $direction;
+  animation-direction: $direction;
+}
+
+
+/*********************
+BREAKPOINTS
+*********************/
+
+@mixin breakpoint($point) {
+  @if $point == desktop {
+    @media (min-width: 1200px) and (max-width: 1920px)  { @content ; }
+  }
+  @else if $point == laptop {
+    @media (min-width: 1024px) and (max-width: 1366px)  { @content ; }
+    // @media (max-width: 40em) and (max-width: 56em) { @content ; }
+  }
+   @else if $point == tablet {
+    // @media (min-width: 50em) { @content ; }
+    // @media (min-width: 800px) and (max-width: 1224px) {@content;}
+    @media (min-width: 768px) and (max-width: 1024px) {@content;} 
+  }
+  @else if $point == phablet {
+    // @media (min-width: 37.5em)  { @content ; }
+    // @media (min-width: 480px) and (max-width: 768px) { @content; }
+    @media (min-width: 600px) and (max-width: 800px) { @content; }
+  }
+ @else if $point == mobileonly {
+    // @media (max-width: 37.5em)  { @content ; }
+    // @media (min-width: 320px) and (max-width: 480px) { @content; }
+    @media (min-width: 320px) and (max-width: 568px) { @content; }
+  }
+}
